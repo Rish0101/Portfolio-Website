@@ -9,7 +9,7 @@ export const profile = {
   phone: "+63 966 463 2178",
   linkedin: "https://www.linkedin.com/in/rajeevamrish/",
   resume: "#",
-  photo: `public/images/me.jpg`, // Later: add your image to /public/me.jpg and change this to '/me.jpg'
+  photo: '/images/me.jpg',
 };
 
 export const projects = [
