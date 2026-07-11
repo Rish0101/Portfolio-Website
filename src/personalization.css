@@ -1,0 +1,107 @@
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 110px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.credential {
+  padding: 32px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.credential .mono { color: var(--orange); }
+.credential h3 { font-size: 20px; margin: 18px 0 8px; }
+.credential p { color: #888; margin: 0; font-size: 13px; }
+
+/* NDA-safe, text-only project showcase */
+.projects {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project {
+  min-height: 520px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  border-color: #555;
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -100px;
+  right: -80px;
+  border-radius: 50%;
+  background: var(--orange);
+  filter: blur(80px);
+  opacity: .12;
+}
+
+.project-number {
+  font: 700 64px Manrope, sans-serif;
+  color: #222;
+  letter-spacing: -.08em;
+  margin-bottom: 65px;
+}
+
+.project .project-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border: 0;
+}
+
+.project .project-info h3 {
+  font-size: clamp(27px, 2.8vw, 42px);
+  line-height: 1;
+  margin: 15px 0 25px;
+}
+
+.project .project-info p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.project .tags {
+  grid-column: auto;
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.nda-note {
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: #666;
+  font: 9px DM Mono, monospace;
+  letter-spacing: .1em;
+}
+
+@media (max-width: 750px) {
+  h1 { font-size: clamp(52px, 15vw, 90px); }
+  .credentials { grid-template-columns: 1fr; margin-top: 70px; }
+  .projects { grid-template-columns: 1fr; gap: 18px; }
+  .project { min-height: 460px; }
+  .project-number { margin-bottom: 40px; }
+}
+
+@media (min-width: 751px) and (max-width: 1050px) {
+  .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
